@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WFGCP892');</script>
+<!-- End Google Tag Manager -->
+
+  <title>Studio Brown</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height">
+
+  <meta name="description"
+    content="Studio Brown">
+  <meta name="keywords"
+    content="Studio Brown">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/img/favicon-96x96.png" sizes="96x96" type="image/png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFGCP892"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<h1>Keep Moving Forward</h1>
+  
+
+  <nav>
+    <button id="expand-btn">MENU</button>
+    <ul id="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/art">Art</a></li>
+      <li><a href="/more">More</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    // Example: toggle menu visibility
+    const expandBtn = document.getElementById('expand-btn');
+    const menu = document.getElementById('menu');
+
+    expandBtn.addEventListener('click', () => {
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
+    });
+
+    // JavaScript to handle navbar toggle when scrolling
+    document.addEventListener('scroll', function () {
+      var navbar = document.querySelector('nav');
+      var expandBtn = document.querySelector('#expand-btn');
+      var menu = document.querySelector('#menu');
+
+      // Check if the page is scrolled past 75% of the video container's height
+      if (window.scrollY > document.body.offsetHeight * 0.20) {
+        navbar.style.padding = '10px 0'; // Minimize navbar by adjusting padding
+        menu.style.maxHeight = '0'; // Collapse the menu
+      } else {
+        navbar.style.padding = '20px 0'; // Reset navbar padding
+        menu.style.maxHeight = '500px'; // Expand the menu
+      }
+    });
+
+    // Toggle navbar visibility and button text when expand button is clicked
+    document.querySelector('#expand-btn').addEventListener('click', function () {
+      var navbar = document.querySelector('nav');
+      var expandBtn = document.querySelector('#expand-btn');
+      var menu = document.querySelector('#menu');
+
+      // Toggle navbar padding to expand/collapse
+      if (menu.style.maxHeight === '0px' || menu.style.maxHeight === '') {
+        navbar.style.padding = '20px 0'; // Expand navbar
+        expandBtn.textContent = 'Menu';  // Keep button as "Menu"
+        menu.style.maxHeight = '500px';  // Show the menu items
+      } else {
+        navbar.style.padding = '10px 0'; // Minimize navbar
+        expandBtn.textContent = 'Menu';  // Keep button as "Menu"
+        menu.style.maxHeight = '0';  // Collapse the menu items
+      }
+    });
+  </script>
+
+</body>
+</html>
