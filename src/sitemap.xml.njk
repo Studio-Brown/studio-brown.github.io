@@ -1,0 +1,40 @@
+---
+permalink: "/sitemap.xml"
+eleventyExcludeFromCollections: true
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+{% for page in collections.sitemapPages %}
+  <url>
+    <loc>{{ site.url }}{{ page.url }}</loc>
+    {% if page.date %}
+      <lastmod>{{ page.date | dateToISO }}</lastmod>
+    {% endif %}
+
+    {# Extract images from the page content #}
+    {% set images = page.templateContent | extractImages %}
+
+    {# Convert relative URLs to absolute URLs and dedupe #}
+    {% set absImages = [] %}
+    {% for img in images %}
+      {% if img.startsWith('/') %}
+        {% set img = site.url + img %}
+      {% endif %}
+      {% if absImages.indexOf(img) == -1 %}
+        {% set absImages = absImages.concat([img]) %}
+      {% endif %}
+    {% endfor %}
+
+    {# Output image tags #}
+    {% for img in absImages %}
+      <image:image>
+        <image:loc>{{ img }}</image:loc>
+      </image:image>
+    {% endfor %}
+  </url>
+{% endfor %}
+</urlset>

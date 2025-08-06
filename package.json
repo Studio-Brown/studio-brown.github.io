@@ -1,0 +1,16 @@
+{
+  "name": "studio-brown-website",
+  "version": "1.0.0",
+  "description": "Studio Brown website",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "dev": "eleventy --serve --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}

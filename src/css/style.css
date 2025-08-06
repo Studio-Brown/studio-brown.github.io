@@ -1,0 +1,85 @@
+/* Define primary color variable */
+:root {
+    --primary-color: #655a54;
+    /* Set the primary color */
+    --secondary-color: #473d38;
+    /* Set the secondary color */
+    --white-color: #dedbdb;
+}
+body {
+    font-family: 'DM Sans', monospace;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+
+    /* Use primary color */
+}
+nav {
+    position: fixed;
+    top: 40px;
+    right: 2px;
+    background-color: transparent;
+    /* Fully transparent background */
+    transition: padding 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 999;
+}
+nav ul {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    /* Navbar items on the right in a vertical list */
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    transition: max-height 0.3s ease;
+    /* Smooth transition for collapsing */
+    overflow: hidden;
+    /* Hide the items when collapsed */
+}
+
+nav ul li {
+    padding: 2px 0px;
+    text-align: left;
+}
+
+nav ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+    /* Use primary color */
+}
+
+/* Minimized navbar button */
+#expand-btn {
+    font-weight: bold;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: block;
+    /* Make sure button is always visible */
+}
