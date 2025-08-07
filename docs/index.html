@@ -37,7 +37,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<div class="index">
 <h1>Keep Moving Forward</h1>
+</div>
+- Bill
   
 
   <nav>
@@ -51,7 +54,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </nav>
 
   <script>
-    // Example: toggle menu visibility
     const expandBtn = document.getElementById('expand-btn');
     const menu = document.getElementById('menu');
 
@@ -63,37 +65,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
 
-    // JavaScript to handle navbar toggle when scrolling
     document.addEventListener('scroll', function () {
       var navbar = document.querySelector('nav');
       var expandBtn = document.querySelector('#expand-btn');
       var menu = document.querySelector('#menu');
 
-      // Check if the page is scrolled past 75% of the video container's height
       if (window.scrollY > document.body.offsetHeight * 0.20) {
-        navbar.style.padding = '10px 0'; // Minimize navbar by adjusting padding
-        menu.style.maxHeight = '0'; // Collapse the menu
+        menu.style.display = 'none';
       } else {
-        navbar.style.padding = '20px 0'; // Reset navbar padding
-        menu.style.maxHeight = '500px'; // Expand the menu
+        menu.style.display = 'block';
       }
     });
 
-    // Toggle navbar visibility and button text when expand button is clicked
     document.querySelector('#expand-btn').addEventListener('click', function () {
       var navbar = document.querySelector('nav');
       var expandBtn = document.querySelector('#expand-btn');
       var menu = document.querySelector('#menu');
 
-      // Toggle navbar padding to expand/collapse
       if (menu.style.maxHeight === '0px' || menu.style.maxHeight === '') {
-        navbar.style.padding = '20px 0'; // Expand navbar
-        expandBtn.textContent = 'Menu';  // Keep button as "Menu"
-        menu.style.maxHeight = '500px';  // Show the menu items
+        menu.style.maxHeight = '500px';
       } else {
-        navbar.style.padding = '10px 0'; // Minimize navbar
-        expandBtn.textContent = 'Menu';  // Keep button as "Menu"
-        menu.style.maxHeight = '0';  // Collapse the menu items
+        menu.style.maxHeight = '0';
       }
     });
   </script>
