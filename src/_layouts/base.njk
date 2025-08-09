@@ -26,7 +26,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="icon" href="{{ '/img/favicon-96x96.png' | url }}" sizes="96x96" type="image/png">
   <link rel="apple-touch-icon" href="{{ '/img/apple-touch-icon.png' | url }}">
 
-
   <!-- Stylesheet -->
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
@@ -39,7 +38,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 {{ content | safe }}
   
-
   <nav>
     <button id="expand-btn">MENU</button>
     <ul id="menu">
@@ -55,36 +53,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const menu = document.getElementById('menu');
 
     expandBtn.addEventListener('click', () => {
-      if (menu.style.display === 'block') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'block';
-      }
-    });
+  menu.classList.toggle('collapsed');
+});
 
-    document.addEventListener('scroll', function () {
-      var navbar = document.querySelector('nav');
-      var expandBtn = document.querySelector('#expand-btn');
-      var menu = document.querySelector('#menu');
-
-      if (window.scrollY > document.body.offsetHeight * 0.20) {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'block';
-      }
-    });
-
-    document.querySelector('#expand-btn').addEventListener('click', function () {
-      var navbar = document.querySelector('nav');
-      var expandBtn = document.querySelector('#expand-btn');
-      var menu = document.querySelector('#menu');
-
-      if (menu.style.maxHeight === '0px' || menu.style.maxHeight === '') {
-        menu.style.maxHeight = '500px';
-      } else {
-        menu.style.maxHeight = '0';
-      }
-    });
+document.addEventListener('scroll', function () {
+  if (window.scrollY > document.body.offsetHeight * 0.20) {
+    menu.classList.add('collapsed');
+  } else {
+    menu.classList.remove('collapsed');
+  }
+});
   </script>
 
 </body>

@@ -69,14 +69,95 @@ nav ul li a:hover {
 }
 
 #menu {
-    max-height: 0;
-    overflow: hidden;
+    max-height: 200px; /* Set to actual content height */
     transition: max-height 0.3s ease;
-}
+  }
+  
+  #menu.collapsed {
+    max-height: 0;
+  }
 
 .index {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.card {
+    justify-self: center;
+    font-family: 'DM Sans', monospace;
+    width: calc(33.333% - 20px);
+    background-color: var(--primary-color);
+    /* Use primary color */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    color: var(--white-color);
+    flex: 1 1 calc(33.33% - 20px);
+    /* Default: 3 cards per row */
+    max-width: 300px;
+    min-width: 200px;
+    position: relative;
+}
+
+/* ADD THIS NEW RULE */
+.card-link {
+    text-decoration: none;
+    /* Removes the default underline from the link */
+    color: inherit;
+    /* Ensures the link text color matches its parent (.card-content) */
+}
+
+/* ADD THIS NEW RULE */
+.card-link::after {
+    content: '';
+    /* Essential for pseudo-elements to display */
+    position: absolute;
+    /* Positions the pseudo-element relative to the .card */
+    top: 0;
+    /* Stretches it to the top edge of the card */
+    right: 0;
+    /* Stretches it to the right edge of the card */
+    bottom: 0;
+    /* Stretches it to the bottom edge of the card */
+    left: 0;
+    /* Stretches it to the left edge of the card */
+    z-index: 1;
+    /* Ensures it sits above other card content for clicking */
+}
+
+/* Card styles */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove hover effect for specific card */
+.no-hover:hover {
+    transform: none;
+    /* Prevent scaling */
+    box-shadow: none;
+    /* Remove shadow effect */
+    cursor: default;
+    /* Optional: Change cursor to default */
+}
+
+/* Card image styles */
+.card img {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for uniformity */
+    object-fit: cover;
+    /* Ensures image fills without distortion */
+    object-position: center;
+    /* Keeps the focal point at the center */
+}
+
+/* Card content styles */
+.card-content {
+    font-family: 'DM Sans', monospace;
+    padding: 10px;
+    text-align: center;
 }
