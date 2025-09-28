@@ -1,18 +1,16 @@
 /* Image container styles */
 .image-container {
   position: relative;
-  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 20px -10px;
   overflow: hidden;
 }
 
 .image-container img {
-  max-width: 190vw;
+  max-width: 130vw;
   height: auto;
   display: block;
-  border-radius: 8px;
 }
 
 .image-text {
