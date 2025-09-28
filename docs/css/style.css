@@ -1,6 +1,35 @@
+/* Image container styles */
+.image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.image-container img {
+  max-width: 190vw;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.image-text {
+  position: absolute;
+  font-family: 'DM Sans', monospace;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white-color);
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
 /* Define primary color variable */
 :root {
-    --primary-color: #655a54;
+    --primary-color: #8e796e;
     /* Set the primary color */
     --secondary-color: #473d38;
     /* Set the secondary color */
